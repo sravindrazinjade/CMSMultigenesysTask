@@ -78,7 +78,7 @@ public class AuthController {
 		} catch (BadCredentialsException ex) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid username or password");
 		} catch (Exception ex) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ex.getMessage());
 		}
 	}
 
